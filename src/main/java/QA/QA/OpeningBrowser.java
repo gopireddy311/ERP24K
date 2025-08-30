@@ -2,6 +2,9 @@ package QA.QA;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
+
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -15,6 +18,7 @@ public class OpeningBrowser
 		 System.setProperty("webdriver.chrome.driver","C:\\Users\\user\\eclipse-workspace\\QA\\BROWSERS\\chromedriver.exe");
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		 Thread.sleep(2000);
 		 
 		 
@@ -25,7 +29,7 @@ public class OpeningBrowser
         @AfterClass
         public void afterClass()
         {
-     	//  driver.quit();
+     	// driver.quit();
         }
 
 }
