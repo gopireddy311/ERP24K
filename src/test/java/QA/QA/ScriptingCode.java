@@ -71,10 +71,10 @@ public class ScriptingCode extends ReusedMethods{
 		 
 		   sleep(3000);
 		   printUsingRobot("preview");
-		/*  Robot robot = new Robot();
+		 Robot robot = new Robot();
 		   
 		   robot.keyPress(KeyEvent.VK_ENTER);
-		    robot.keyRelease(KeyEvent.VK_ENTER); */
+		    robot.keyRelease(KeyEvent.VK_ENTER); 
 	   }         //........... ESTIMATION ........                      //........... ESTIMATION ........
 	
 	
