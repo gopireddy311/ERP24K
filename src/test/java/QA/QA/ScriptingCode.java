@@ -176,64 +176,105 @@ public class ScriptingCode extends ReusedMethods{
 			Thread.sleep(5000);
 
 			Savings.click();
+			Thread.sleep(2000);
 			
 			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[1]/input")).sendKeys("gold loan");
 			
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[2]/input")).sendKeys("9");
          
-			//Date Picker
-			
-			String edate="1";
-			String emonth="January";
-			String eyear="2025";
-			
-			Thread.sleep(2000);
-			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[3]/mat-form-field/div/div[1]/div[2]")).click();
-			Thread.sleep(2000);
-			
-			while(true)
-			{
-				String amonth=driver.findElement(By.xpath("//td[@class='mat-calendar-body-label ng-star-inserted']")).getText();
-				
-				Thread.sleep(2000);
-				driver.findElement(By.xpath("//*[@id=\"mat-calendar-button-10\"]")).click();
-				Thread.sleep(2000);
-				
-				String ayear=driver.findElement(By.xpath("mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-today")).getText();
-				
-				if(ayear.equals(eyear)&&amonth.equals(emonth))
-				{
-					List<WebElement>alldays=driver.findElements(By.xpath("//table//tbody//tr//td"));////*[@id="mat-datepicker-0"]/mat-calendar-header/div/div/button[1]/span[1]/svg/polygon
+	    	//Date Picker
+//			
+//			String edate="1";
+//			String emonth="January";
+//			String eyear="2025";
+//			
+//			Thread.sleep(2000);
+//			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[3]/mat-form-field/div/div[1]/div[2]")).click();
+//			Thread.sleep(2000);
+//			
+//			while(true)
+//			{
+//				String amonth=driver.findElement(By.xpath("//td[@class='mat-calendar-body-label ng-star-inserted']")).getText();
+//				
+//				Thread.sleep(2000);
+//				driver.findElement(By.xpath("//*[@id=\"mat-calendar-button-10\"]")).click();
+//				Thread.sleep(2000);
+//				
+//				String ayear=driver.findElement(By.xpath("mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-today")).getText();
+//				
+//				if(ayear.equals(eyear)&&amonth.equals(emonth))
+//				{
+//					List<WebElement>alldays=driver.findElements(By.xpath("//table//tbody//tr//td"));////*[@id="mat-datepicker-0"]/mat-calendar-header/div/div/button[1]/span[1]/svg/polygon
+//					
+//					for(int d=0;d<alldays.size();d++)
+//					{
+//						System.out.println(alldays.get(d).getText());
+//						
+//						if(alldays.get(d).getText().equals(edate))
+//						{
+//							Thread.sleep(2000);
+//							alldays.get(d).click();
+//							break;
+//						}
+//						}
+//					break;
+//					}
+//				else
+//				{
+//					Thread.sleep(2000);
+//					driver.findElement(By.xpath("//button[@aria-label='Next month")).click();////*[@id=\"mat-datepicker-0\"]/mat-calendar-header/div/div/button[2]
+//					Thread.sleep(2000);
+//				}
+//				{
 					
-					for(int d=0;d<alldays.size();d++)
-					{
-						System.out.println(alldays.get(d).getText());
-						
-						if(alldays.get(d).getText().equals(edate))
-						{
-							Thread.sleep(2000);
-							alldays.get(d).click();
-							break;
-						}
-						}
-					break;
-					}
-				else
-				{
-					Thread.sleep(2000);
-					driver.findElement(By.xpath("//button[@aria-label='Next month")).click();////*[@id=\"mat-datepicker-0\"]/mat-calendar-header/div/div/button[2]
-					Thread.sleep(2000);
-				}
-				//Manju Gopi
-				
-				//public void Manju()
-				{
-					
-				}
-			}
-	   }
-	
-	
-	
+//				}
+//			}
+			Thread.sleep(2000);
+			//MemberShip Limit
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[4]/input")).sendKeys("12");
+			//Monthly Saving
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[3]/div[1]/input")).sendKeys("10");
+			//max monthly Saving
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[3]/div[2]/input")).sendKeys("10000");
+			//paying out period
+			Thread.sleep(1000);
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[3]/div[3]/input")).sendKeys("1");
+			//instant pay out
+			Thread.sleep(1000);
+			WebElement Pay=driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[3]/div[4]/ng-select/div/span"));
+			Pay.click();
+			//Thread.sleep(2000);
+			WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(7));
+	    	WebElement Yes=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='ng-option-label ng-star-inserted']")));
+		    Thread.sleep(5000);
+		    
+		    Yes.click();
+		    //Late Payment details
+		    driver.findElement(By.xpath("//div//input[@id='isLatePaymentDetails']")).click();
+		    driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[2]/div/div/div[2]/div[1]/input")).sendKeys("5");
+		    driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[2]/div/div/div[2]/div[2]/input")).sendKeys("9.89");
+
+		    //Validation Condition
+		    Thread.sleep(2000);
+		    WebElement GroupType=new WebDriverWait(driver,Duration.ofSeconds(12)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='mat-select-value-1']")));
+		    
+		    GroupType.click();
+		// ((JavascriptExecutor)driver).executeScript("arguments[0].click()",driver.findElement(By.xpath("")));
+		    Thread.sleep(2000);
+//		    WebElement Gold=driver.findElement(By.xpath("//*[@id=\"mat-option-0\"]"));
+//		    Thread.sleep(5000);
+//		    Gold.click();
+		    
+		//    driver.findElement(By.xpath("")).click();
+		    
+		    
+			
+
+			
+   }
 	
 }

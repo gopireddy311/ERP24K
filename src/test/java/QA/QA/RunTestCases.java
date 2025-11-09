@@ -19,6 +19,7 @@ public class RunTestCases extends OpeningBrowser {
 //	   code.price();
 	    code.Scheme();
 	    //code.Manju();
+	    
 	  
 	  
 	  
