@@ -18,6 +18,7 @@ public class RunTestCases extends OpeningBrowser {
 //	    code.addPurity();
 //	   code.price();
 	    code.Scheme();
+	    //code.Manju();
 	  
 	  
 	  
