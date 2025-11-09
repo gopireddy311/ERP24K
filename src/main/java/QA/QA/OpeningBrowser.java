@@ -15,7 +15,7 @@ public class OpeningBrowser
 	 @BeforeMethod
 	  public void beforeMethod() throws InterruptedException 
 	  {
-		 System.setProperty("webdriver.chrome.driver","C:\\Users\\user\\eclipse-workspace\\QA\\BROWSERS\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver","C:\\Users\\gopir\\git\\ERP24K\\BROWSERS\\chromedriver.exe");
 		 driver = new ChromeDriver();
 		 driver.manage().window().maximize();
 		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));

@@ -12,11 +12,12 @@ public class RunTestCases extends OpeningBrowser {
 	  ScriptingCode code = new ScriptingCode();
 	    code.login();
 	    code.dashboard();
-	  //  code.Estimation();
-	   code.more();
-	    code.master();
-	    code.addPurity();
-	   // code.price();
+//	   code.Estimation();
+//	   code.more();
+//	    code.master();
+//	    code.addPurity();
+//	   code.price();
+	    code.Scheme();
 	  
 	  
 	  

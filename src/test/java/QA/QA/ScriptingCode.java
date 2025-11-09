@@ -14,6 +14,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ScriptingCode extends ReusedMethods{
@@ -48,7 +49,7 @@ public class ScriptingCode extends ReusedMethods{
 	public void dashboard() throws InterruptedException
 	{
 		 sleep(2);
-		 driver.findElement(By.xpath("//button[text()='×']")).click();
+		 driver.findElement(By.xpath("//*[@id=\"kt_body\"]/app-banner/div/div/div[2]/button")).click();
 		//button[text()='×']
 	}
 	
@@ -150,6 +151,83 @@ public class ScriptingCode extends ReusedMethods{
 		
 	     	//........... PRICE ........                      //........... PRICE ........
 	}
+	public void Scheme() throws InterruptedException
+	   
+	   {
+		   
+		   WebElement moreElement = driver.findElement(By.xpath("//span[text()='More']"));
+			Thread.sleep(2000);
+			Actions action = new Actions(driver);
+			action.moveToElement(moreElement).pause(2000).click().build().perform();
+			driver.findElement(By.xpath("//*[@id=\"#kt_header_menu\"]/div[6]/div/div/div/div[15]/div/a/span[2]")).click();
+			Thread.sleep(2000);
+		
+			WebElement CreateScheme=driver.findElement(By.xpath("//*[@id=\"myTab\"]/li[6]"));
+			Actions Create=new Actions(driver);
+			action.moveToElement(CreateScheme).pause(2000).click().build().perform();
+			
+		WebElement Scheme=driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/div/div/form/div/div[1]/ng-select/div/span"));
+			Thread.sleep(2000);
+		
+			Scheme.click();
+			//Select s=new Select(Scheme);
+			//s.selectByIndex(1);
+			WebElement Savings=driver.findElement(By.xpath("//span[contains(text(),'Savings')]"));
+			Thread.sleep(5000);
+
+			Savings.click();
+			
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[1]/input")).sendKeys("gold loan");
+			
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[2]/input")).sendKeys("9");
+         
+			//Date Picker
+			
+			String edate="1";
+			String emonth="January";
+			String eyear="2025";
+			
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[3]/mat-form-field/div/div[1]/div[2]")).click();
+			Thread.sleep(2000);
+			
+			while(true)
+			{
+				String amonth=driver.findElement(By.xpath("//td[@class='mat-calendar-body-label ng-star-inserted']")).getText();
+				
+				Thread.sleep(2000);
+				driver.findElement(By.xpath("//*[@id=\"mat-calendar-button-10\"]")).click();
+				Thread.sleep(2000);
+				
+				String ayear=driver.findElement(By.xpath("mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-today")).getText();
+				
+				if(ayear.equals(eyear)&&amonth.equals(emonth))
+				{
+					List<WebElement>alldays=driver.findElements(By.xpath("//table//tbody//tr//td"));////*[@id="mat-datepicker-0"]/mat-calendar-header/div/div/button[1]/span[1]/svg/polygon
+					
+					for(int d=0;d<alldays.size();d++)
+					{
+						System.out.println(alldays.get(d).getText());
+						
+						if(alldays.get(d).getText().equals(edate))
+						{
+							Thread.sleep(2000);
+							alldays.get(d).click();
+							break;
+						}
+						}
+					break;
+					}
+				else
+				{
+					Thread.sleep(2000);
+					driver.findElement(By.xpath("//button[@aria-label='Next month")).click();////*[@id=\"mat-datepicker-0\"]/mat-calendar-header/div/div/button[2]
+					Thread.sleep(2000);
+				}
+				
+			}
+	   }
+	
 	
 	
 	

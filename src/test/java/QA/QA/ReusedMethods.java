@@ -27,7 +27,7 @@ public class ReusedMethods extends RunTestCases {
   public void screenshot(String sc) throws IOException 
   {
 	  File source =  ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-	  File Target = new File("C:\\Users\\user\\eclipse-workspace\\QA\\src\\data\\java\\TEST PROOFS\\"+sc+".jpg");
+	  File Target = new File("C:\\Users\\gopir\\git\\ERP24K\\src\\data\\java\\TEST PROOFS"+sc+".jpg");
 	  FileHandler.copy(source, Target);
 	  /*
 	  File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
