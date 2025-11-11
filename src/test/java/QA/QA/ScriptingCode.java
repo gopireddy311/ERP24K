@@ -259,22 +259,49 @@ public class ScriptingCode extends ReusedMethods{
 		    driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[2]/div/div/div[2]/div[2]/input")).sendKeys("9.89");
 
 		    //Validation Condition
+		//  WebDriverWait W=new WebDriverWait(driver,Duration.ofSeconds(10));
+        //  WebElement element=W.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']")));
+		   
+			WebElement element=driver.findElement(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']"));
+		    ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		   Thread.sleep(5000);
+		   element.click();
+		    
+		    Thread.sleep(5000);
+		    WebElement Gold=driver.findElement(By.xpath("//mat-option[@id='mat-option-0']//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted']"));
 		    Thread.sleep(2000);
-		    WebElement GroupType=new WebDriverWait(driver,Duration.ofSeconds(12)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='mat-select-value-1']")));
-		    
-		    GroupType.click();
-		// ((JavascriptExecutor)driver).executeScript("arguments[0].click()",driver.findElement(By.xpath("")));
+         
+		    Gold.click();
 		    Thread.sleep(2000);
-//		    WebElement Gold=driver.findElement(By.xpath("//*[@id=\"mat-option-0\"]"));
-//		    Thread.sleep(5000);
-//		    Gold.click();
-		    
-		//    driver.findElement(By.xpath("")).click();
-		    
+    
+		    Actions AC=new Actions(driver);
+		    AC.sendKeys(Keys.ESCAPE).perform();//click to close the dropdown
+		 //   ((JavascriptExecutor)driver).executeScript("document.body.click();");//click to close the dropdown
+		    Thread.sleep(2000);
+		    WebElement GoldPurity=driver.findElement(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-42']"));
+		    Thread.sleep(5000);
+	    	GoldPurity.click();
+		    Thread.sleep(5000);
+
+	    	WebElement SelectAll=driver.findElement(By.xpath("//mat-checkbox[@id='mat-checkbox-3']"));////*[@id="mat-checkbox-11"]
+	    	SelectAll.click();
+	    	Thread.sleep(2000);
+		    ((JavascriptExecutor)driver).executeScript("document.body.click();");//click to close the dropdown
+
+		    WebDriverWait Diamond=new WebDriverWait(driver,Duration.ofSeconds(7));
+	    	WebElement click=Diamond.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin']")));
+	    	click.click();
+//	    	
+//	    
+//	    	WebElement DiamondType=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"mat-checkbox-13\"]/label/span[1]")));
+//	    	Thread.sleep(5000);
+//	    	DiamondType.click();
+	    	
+	    
+	    	
 		    
 			
 
-			
    }
 	
 }
