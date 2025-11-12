@@ -11,6 +11,7 @@ import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -166,24 +167,22 @@ public class ScriptingCode extends ReusedMethods{
 			Actions Create=new Actions(driver);
 			action.moveToElement(CreateScheme).pause(2000).click().build().perform();
 			
-		WebElement Scheme=driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/div/div/form/div/div[1]/ng-select/div/span"));
-			Thread.sleep(2000);
-		
-			Scheme.click();
-			//Select s=new Select(Scheme);
-			//s.selectByIndex(1);
-			WebElement Savings=driver.findElement(By.xpath("//span[contains(text(),'Savings')]"));
 			Thread.sleep(5000);
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/div/div/form/div/div[1]/ng-select/div/div/div[2]/input")).sendKeys("Savings");;
+			sleep(2);
+         
+           Actions Savings=new Actions(driver);
+       	Thread.sleep(5000);
+           Savings.keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).perform();
+           sleep(5);
+          Savings.keyDown(Keys.ENTER).keyUp(Keys.ENTER).click().perform();
 
-			Savings.click();
-			Thread.sleep(2000);
-			
-			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[1]/input")).sendKeys("gold loan");
+			driver.findElement(By.xpath("//input[@placeholder='Enter scheme name']")).sendKeys("gold loan");
 			
 			Thread.sleep(2000);
 			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[1]/div/div/div[2]/div[2]/input")).sendKeys("9");
          
-	    	//Date Picker
+//	    	//Date Picker
 //			
 //			String edate="1";
 //			String emonth="January";
@@ -261,18 +260,18 @@ public class ScriptingCode extends ReusedMethods{
 		    //Validation Condition
 		//  WebDriverWait W=new WebDriverWait(driver,Duration.ofSeconds(10));
         //  WebElement element=W.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']")));
-		   
-			WebElement element=driver.findElement(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']"));
+		   Thread.sleep(10000);
+		WebElement element=driver.findElement(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']"));
 		    ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		   Thread.sleep(5000);
+		   sleep(5);
 		   element.click();
 		    
 		    Thread.sleep(5000);
-		    WebElement Gold=driver.findElement(By.xpath("//mat-option[@id='mat-option-0']//mat-pseudo-checkbox[@class='mat-pseudo-checkbox mat-option-pseudo-checkbox ng-star-inserted']"));
-		    Thread.sleep(2000);
+		    WebElement Gold=driver.findElement(By.xpath("//mat-option[@id='mat-option-0']"));
+		    sleep(5);
          
 		    Gold.click();
-		    Thread.sleep(2000);
+		    sleep(2);
     
 		    Actions AC=new Actions(driver);
 		    AC.sendKeys(Keys.ESCAPE).perform();//click to close the dropdown
@@ -291,17 +290,39 @@ public class ScriptingCode extends ReusedMethods{
 		    WebDriverWait Diamond=new WebDriverWait(driver,Duration.ofSeconds(7));
 	    	WebElement click=Diamond.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='mat-checkbox-inner-container mat-checkbox-inner-container-no-side-margin']")));
 	    	click.click();
-//	    	
-//	    
-//	    	WebElement DiamondType=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"mat-checkbox-13\"]/label/span[1]")));
-//	    	Thread.sleep(5000);
-//	    	DiamondType.click();
 	    	
-	    
-	    	
+			WebDriverWait dia=new WebDriverWait(driver,Duration.ofSeconds(7));
+
+	    	WebElement DiamondType=dia.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"mat-checkbox-13\"]/label/span[1]")));
+	    	Thread.sleep(5000);
+	    	DiamondType.click();
+		   
+//		   WebElement bonus=driver.findElement(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']"));
+//		    ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", bonus);
+//		    ((JavascriptExecutor)driver).executeScript("arguments[0].click();", bonus);
+//
+//		   Thread.sleep(5000);
+//		  bonus.click();
+//		    
+		/*    //Validation Condition
+		    sleep(2);
+		  // WebElement GroupType=driver.findElement(By.xpath("//div[@class='mat-select-arrow ng-tns-c127-38']"));
+		 //   ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", GroupType);
+		   sleep(5);
+		 //   ((JavascriptExecutor)driver).executeScript("arguments[0].click();", GroupType);
+           //   GroupType.click();
 		    
+		   sleep(2);
+		   WebDriverWait GroupType=new WebDriverWait(driver,Duration.ofSeconds(15));
+		 //  WebElement Group=GroupType.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='mat-form-field-flex ng-tns-c80-37']")));
+		   WebElement Group=GroupType.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"mat-select-0\"]/div/div[2]/div")));
+
+		   */
+		   
 			
 
    }
+
+	
 	
 }
