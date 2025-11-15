@@ -172,9 +172,9 @@ public class ScriptingCode extends ReusedMethods{
 			sleep(2);
          
            Actions Savings=new Actions(driver);
-       	Thread.sleep(5000);
+       	Thread.sleep(2);
            Savings.keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).perform();
-           sleep(5);
+           sleep(2);
           Savings.keyDown(Keys.ENTER).keyUp(Keys.ENTER).click().perform();
 
 			driver.findElement(By.xpath("//input[@placeholder='Enter scheme name']")).sendKeys("gold loan");
@@ -187,23 +187,22 @@ public class ScriptingCode extends ReusedMethods{
 			//Select the Scheme Start Date 
 			// Click on the date icon    
 			
-			    Actions SchemeStartDate=new Actions(driver); 
-			        SchemeStartDate.moveToElement(driver.findElement(By.xpath("//span[@class='mat-button-wrapper']//*[name()='svg']"))).pause(2).click().build().perform(); 
-			         sleep(1);       
-			   // Click on the full date (13/11/2025)dropdown       
-			   SchemeStartDate.moveToElement(driver.findElement(By.xpath("//button[contains(@class,'mat-calendar-period-button')]"))).pause(2).click().build().perform();      
+			Actions SchemeStartDate=new Actions(driver); 
+		SchemeStartDate.moveToElement(driver.findElement(By.xpath("//span[@class='mat-button-wrapper']//*[name()='svg']"))).pause(2).click().build().perform(); 
+		sleep(1); 
+	    // Click on the full date (13/11/2025)dropdown       
+			   SchemeStartDate.moveToElement(driver.findElement(By.xpath("//button[contains(@class,'mat-calendar-period-button')]"))).pause(2).click().build().perform();
 			   sleep(1); 
-			        // Click on the Year      
-			     SchemeStartDate.moveToElement(driver.findElement(By.xpath("//div[text()=' 2025 ']"))).pause(2).click().build().perform();     
-			     sleep(1);      
-			       // Click on the Month      
-			       SchemeStartDate.moveToElement(driver.findElement(By.xpath("//div[text()=' SEPT ']"))).pause(2).click().build().perform();       
-			      sleep(1);       
-			      // Click on the Day     
-			         SchemeStartDate.moveToElement(driver.findElement(By.xpath("//div[text()=' 1 ']"))).pause(2).click().build().perform();    
-			         sleep(2);
-			        
-			        
+        //Click on the year
+			 SchemeStartDate.moveToElement(driver.findElement(By.xpath("//div[text()=' 2025 ']"))).pause(2).click().build().perform(); 
+	          sleep(1);
+	   //click on the Month
+			    SchemeStartDate.moveToElement(driver.findElement(By.xpath("//div[text()=' SEPT ']"))).pause(2).click().build().perform(); 
+			   sleep(1); 
+			   //Click on the Day
+			    SchemeStartDate.moveToElement(driver.findElement(By.xpath("//div[text()=' 1 ']"))).pause(2).click().build().perform(); 
+			   sleep(2);
+			 
 			Thread.sleep(2000);
 			//MemberShip Limit
 			Thread.sleep(1000);
@@ -304,8 +303,8 @@ public class ScriptingCode extends ReusedMethods{
           //Scheme Benefits
 		   
 		     //Bonus
-		   sleep(5);
-		   WebElement BonusType=driver.findElement(By.xpath("//span[@class='mat-select-placeholder mat-select-min-line ng-tns-c127-46 ng-star-inserted']"));
+		   sleep(8);
+		   WebElement BonusType=driver.findElement(By.xpath("//*[@id=\"mat-select-value-5\"]/span"));
 		  
 		   sleep(2);
 		  
@@ -473,19 +472,171 @@ public class ScriptingCode extends ReusedMethods{
 							   G.sendKeys(Keys.ESCAPE).perform();//To close the dropdown
 							 
 					           
-					           //Product
-					           sleep(2);
-					           driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[3]/div/ng-select/div/div/div[3]/input")).sendKeys("yes");
-					           sleep(2);
-					           Actions Product=new Actions(driver);
-						       	Thread.sleep(5000);
-						       	Product.keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).perform();
-						           sleep(5);
-						           Product.keyDown(Keys.ENTER).keyUp(Keys.ENTER).click().perform();
-						          
-						           Actions H=new Actions(driver);
-								   H.sendKeys(Keys.ESCAPE).perform();//To close the dropdown
-								 
+					         	   
+			//Bonus % per month 
+								   
+				  //1st Month
+						
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[1]/div/div[2]/input")).sendKeys("1");
+					
+				  //2nd Month
+		
+driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[2]/div/div[2]/input")).sendKeys("2");
+			
+			     //3rd Month
+			
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[3]/div/div[2]/input")).sendKeys("3");
+					
+		    	  //4th Month
+					
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[4]/div/div[2]/input")).sendKeys("4");
+					
+					  //5th Month
+					
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[5]/div/div[2]/input")).sendKeys("5");
+					
+					  //6th Month
+					
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[6]/div/div[2]/input")).sendKeys("6");
+					
+					  //7th Month
+					
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[7]/div/div[2]/input")).sendKeys("7");
+					
+					  //8th Month
+					
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[8]/div/div[2]/input")).sendKeys("8");
+					
+					  //9th Month
+					
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[5]/div/div[9]/div/div[2]/input")).sendKeys("9");
+			
+			sleep(5);
+			//Copy To
+			driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[3]/div[2]/button")).click();
+			sleep(4);
+			//Diamond click
+			driver.findElement(By.xpath("//*[@id=\"mat-checkbox-9\"]/label/span[2]/span[2]")).click();
+			sleep(4);
+			//Submit
+			driver.findElement(By.xpath("//*[@id=\"kt_body\"]/ngb-modal-window/div/div/app-copy-bonus-percentage/div[2]/div[2]/button")).click();
+			
+	  //Product
+			
+	           sleep(5);
+	         driver.findElement(By.xpath("//div[text()='Select is quit option available for product']")).sendKeys("Yes");
+	        
+	           sleep(2);
+	           Actions Product=new Actions(driver);
+		       sleep(5);
+		       	Product.keyDown(Keys.ARROW_DOWN).keyUp(Keys.ARROW_DOWN).perform();
+		           sleep(5);
+		           Product.keyDown(Keys.ENTER).keyUp(Keys.ENTER).click().perform();
+		          
+		           Actions I=new Actions(driver);
+				   I.sendKeys(Keys.ESCAPE).perform();//To close the dropdown
+				   
+		//Bonus % per month Wise
+				   
+					  //1st Month
+							
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[1]/div/div[2]/input")).sendKeys("1");
+						
+					  //2nd Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[2]/div/div[2]/input")).sendKeys("2");
+				
+				     //3rd Month
+				
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[3]/div/div[2]/input")).sendKeys("3");
+						
+			    	  //4th Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[4]/div/div[2]/input")).sendKeys("4");
+						
+						  //5th Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[5]/div/div[2]/input")).sendKeys("5");
+						
+						  //6th Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[6]/div/div[2]/input")).sendKeys("6");
+						
+						  //7th Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[7]/div/div[2]/input")).sendKeys("7");
+						
+						  //8th Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[8]/div/div[2]/input")).sendKeys("8");
+						
+						  //9th Month
+						
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[9]/div/div[2]/input")).sendKeys("9");
+				
+				sleep(5);
+				//Copy To
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[7]/div[2]/button")).click();
+				sleep(4);
+				//Diamond click
+				driver.findElement(By.xpath("//*[@id=\"mat-checkbox-10\"]/label/span[2]/span[2]")).click();
+				sleep(4);
+				//Submit
+				driver.findElement(By.xpath("//*[@id=\"kt_body\"]/ngb-modal-window/div/div/app-copy-bonus-percentage/div[2]/div[2]/button")).click();
+				
+			
+			//Discount in VA
+				
+				driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[8]/div/div/label[2]")).click();
+				  //1st Month
+				
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[1]/div/div[2]/input")).sendKeys("1");
+								
+							  //2nd Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[2]/div/div[2]/input")).sendKeys("2");
+						
+						     //3rd Month
+						
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[3]/div/div[2]/input")).sendKeys("3");
+								
+					    	  //4th Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[4]/div/div[2]/input")).sendKeys("4");
+								
+								  //5th Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[5]/div/div[2]/input")).sendKeys("5");
+								
+								  //6th Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[6]/div/div[2]/input")).sendKeys("6");
+								
+								  //7th Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[7]/div/div[2]/input")).sendKeys("7");
+								
+								  //8th Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[8]/div/div[2]/input")).sendKeys("8");
+								
+								  //9th Month
+								
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[9]/div/div[9]/div/div[2]/input")).sendKeys("9");
+				
+						sleep(5);
+						//Copy To
+						driver.findElement(By.xpath("//*[@id=\"kt_content_container\"]/app-schemes/div[2]/app-create-schemes/app-saving/form/section[6]/app-saving-quit-option/div/div/div[7]/div[2]/button")).click();
+						sleep(4);
+						//Diamond click
+						driver.findElement(By.xpath("//*[@id=\"mat-checkbox-11\"]/label/span[2]/span[2]")).click();
+						sleep(4);
+						//Submit
+						driver.findElement(By.xpath("//*[@id=\"kt_body\"]/ngb-modal-window/div/div/app-copy-bonus-percentage/div[2]/div[2]/button")).click();
+						
+						//Discount In Making Charges
+						
+				
    }
 
 	
