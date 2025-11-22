@@ -10,12 +10,20 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.time.Duration;
 
 import javax.imageio.ImageIO;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ReusedMethods extends RunTestCases {
   public void sleep(int toSleep) throws InterruptedException
@@ -55,4 +63,7 @@ public class ReusedMethods extends RunTestCases {
 	    File file = new File("C:\\Users\\user\\eclipse-workspace\\QA\\src\\data\\java\\TEST PROOFS\\"+p+".png");
 	    ImageIO.write(screenCapture, "png", file);
   }
+  
+  
+
 }

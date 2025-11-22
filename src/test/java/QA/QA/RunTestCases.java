@@ -17,11 +17,13 @@ public class RunTestCases extends OpeningBrowser {
 //	    code.master();
 //	    code.addPurity();
 //	   code.price();
-	    code.Scheme();
+	   code.Schemes();
+	   
 	  
 	    
 	  
 	  
 	  
   }
+
 }
